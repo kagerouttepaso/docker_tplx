@@ -1,4 +1,5 @@
 FROM ubuntu:12.04
+MAINTAINER yuki kitsunai <goth.wasawasa@gmail.com>
 
 #RUN apt-get update
 RUN apt-get install -y curl
