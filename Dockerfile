@@ -9,4 +9,6 @@ RUN rm /tmp/install.sh
 
 ADD ./cookbooks /opt/chef/cookbooks
 RUN /opt/chef/bin/chef-apply /opt/chef/cookbooks/my_settings.rb
+RUN /root/.vim/bundle/neobundle.vim/bin/neoinstall
+
 RUN /opt/chef/bin/chef-apply /opt/chef/cookbooks/tplx.rb
