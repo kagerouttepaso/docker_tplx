@@ -17,7 +17,7 @@ tmp_dir="#{Chef::Config[:file_cache_path]}"
 directory tmp_dir
 
 #必要パッケージのインストール
-%w{sudo unzip make gcc gcc-4.4-arm-linux-gnueabi}.each do |pkg|
+%w{sudo unzip make gcc gcc-4.4-arm-linux-gnueabi g++-4.4-arm-linux-gnueabi}.each do |pkg|
   package pkg do
     action :upgrade
   end
