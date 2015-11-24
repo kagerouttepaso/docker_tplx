@@ -44,42 +44,8 @@ end
 ### 自分用カスタム
 
 #パッケージのインストール
-%w{bc git tmux vim-nox zsh make gcc autojump}.each do |pkg|
+%w{bc make gcc}.each do |pkg|
   package pkg do
     action :upgrade
   end
-end
-
-#設定ファイルをダウンロード
-git dotfiles_dir do
-  action            :sync
-  repository        "https://github.com/kagerouttepaso/dotfiles.git"
-  user              username
-  group             username
-  enable_submodules true
-  notifies :run, "bash[after_sync]", :immediately
-end
-
-bash "after_sync" do
-  action :nothing
-  cwd    dotfiles_dir
-  user   username
-  group  username
-  environment(
-    "HOME" => home_dir
-  )
-  code <<-EOH
-  ./install.sh
-  EOH
-end
-
-file home_dir+"/reconfigure_keybord.sh" do
-  action :create
-  content <<-EOH
-  #!/bin/bash
-  sudo dpkg-reconfigure keyboard-configuration
-  EOH
-  owner username
-  group username
-  mode  "0755"
 end
