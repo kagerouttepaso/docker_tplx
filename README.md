@@ -16,6 +16,10 @@ windowsは[docker_toolbox](https://www.docker.com/docker-toolbox)をインスト
 ### Linuxの場合
 ./build_script/linux/build.sh をコピーして実行してください。
 ### Windowsの場合
+**Windows用のスクリプトは現在開発中のもので、正常に動作しません。**
+
+Releaseまでお待ち下さい。
+
 1. ./build_script/windows/mk_machine.bat をまず実行し、Windows上でDockerを動作させる仮想マシンを作成します。
 2. ./build_script/windows/build.batをコピーして実行します。
 3.  TPLXの開発が終了したら、./build_script/windows/rm_machine.batを実行し、仮想マシンを削除します。
