@@ -11,15 +11,18 @@ help
 linux_script 
   linux用のビルドスクリプトを出力します。出力をパイプすることで、
   ビルド用のスクリプトファイルを作成することが出来ます。
-  ex)
-  docker run kagerouttepaso/tplx linux_script > build.sh
+  ex1)
+  docker run tpip/tplx linux_script > build.sh
   ./build.sh
+
+  ex2)
+  docker run --rm tpip/tplx linux_script | sh -
 
 windows_script
   windows用のビルドスクリプトを出力します。出力をパイプすることで、
   ビルド用のスクリプトファイルを作成することが出来ます。
   ex)
-  docker run kagerouttepaso/tplx windows_script > build.bat
+  docker run tpip/tplx windows_script > build.bat
   build.bat
 
 build
@@ -30,24 +33,21 @@ rebuild
 
 clean
   /src以下にマウントされたTPLX_APPのソースをクリーンします
-
 '
 SRC_NOT_FOUTD_MESSAGE='
 /src以下にフォルダがマウントされていません。
 フォルダをマウントしてコンテナを起動してください。
 
 linux ex1)
-  docker run kagerouttepaso/tplx linux_script > build.sh
+  docker run tpip/tplx linux_script > build.sh
   ./build.sh
 
 linux ex2)
-  docker run --rm -v `pwd`:/src kagerouttepaso/tplx build
+  docker run --rm -v `pwd`:/src tpip/tplx build
 
 windows ex)
-  docker run kagerouttepaso/tplx windows_script > build.bat
+  docker run tpip/tplx windows_script > build.bat
   build.bat
-
-
 '
 
 if [ "$1" = "help" ]; then

@@ -1,3 +1,3 @@
 #!/bin/bash
 PWD=`pwd`
-docker run --rm -v ${PWD}:/src kagerouttepaso/tplx rebuild
+docker run --rm -v ${PWD}:/src tpip/tplx rebuild
